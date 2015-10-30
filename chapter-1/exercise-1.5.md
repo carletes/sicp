@@ -34,6 +34,10 @@ evaluate the operator `test`, then the first argument `0` (both of which will
 complete), and then it will try to evaluate `(p)`, which will evaluate to
 itself, and so on and so forth.
 
+(R5RS says that "the operator [`test`, in this case] and operand expressions
+are evaluated _(in an unspecified order)_", so in practice the sequence of
+evaluations in the previous paragraph is not necessarily accurate).
+
 My guess is that a normal-order interpreter will never manage to expand
 `(test 0 (p))`, for similar reasons, so it will never get to the point
 of reducing its arguments.
